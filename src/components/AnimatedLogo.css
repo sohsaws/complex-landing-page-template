@@ -1,0 +1,63 @@
+.animated-logo {
+  position: relative;
+  width: 56px;
+  height: 56px;
+}
+
+.logo-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.gradient-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  padding: 3px;
+  background: conic-gradient(
+    from var(--rotation),
+    #c8ff00 0deg,
+    #00ff88 60deg,
+    #00d4ff 120deg,
+    #8800ff 180deg,
+    #ff0088 240deg,
+    #ff4400 300deg,
+    #c8ff00 360deg
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+    filter: blur(0px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(1px);
+  }
+}
+
+.logo-center {
+  position: absolute;
+  inset: 3px;
+  display: flex;
+}
+
+.logo-center img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  
+}

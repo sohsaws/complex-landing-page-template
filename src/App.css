@@ -1,0 +1,73 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.interactive-window {
+  width: 100%;
+  max-width: 1200px;
+  height: 420px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgb(0, 0, 0);
+}
+
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.scroll-hint .plus {
+  color: #999;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.scroll-hint .hint-text {
+  color: #666;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 0 30px;
+  }
+  
+  .hero-text {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 20px;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.25rem;
+  }
+  
+  .interactive-window {
+    min-height: 400px;
+  }
+}
