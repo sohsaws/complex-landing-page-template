@@ -15,33 +15,34 @@
 .interactive-window {
   width: 100%;
   max-width: 1380px;
-  height: 420px;
+  height: 470px;
   background: #1a1a1a;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 40px rgb(0, 0, 0);
 }
 
 .scroll-hint {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 80px;
-  padding: 20px 0;
-  width: 100%;
-  max-width: 1200px;
+  gap: 155px;
+  padding: 5px;
 }
 
 .scroll-hint .plus {
-  color: #999;
-  font-size: 1rem;
-  font-weight: 300;
+  color: #000000;
+  font-size: 2rem;
 }
 
+.scroll-hint .plus-edge {
+  color: #000000;
+  font-size: 2rem;
+}
+
+
 .scroll-hint .hint-text {
-  color: #666;
-  font-size: 0.75rem;
+  color: #000000;
+  font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;

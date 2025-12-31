@@ -11,11 +11,13 @@ export default function App() {
           <InteractiveScene />
         </div>
         <div className="scroll-hint">
-          <span className="plus">-</span>
-          <span className="plus">-</span>
+          <span className="plus-edge">+</span>
+          <span className="plus">+</span>
+          <span className="plus">+</span>
           <span className="hint-text">листайте, чтобы узнать меня лучше</span>
-          <span className="plus">-</span>
-          <span className="plus">-</span>
+          <span className="plus">+</span>
+          <span className="plus">+</span>
+          <span className="plus-edge">+</span>
         </div>
       </main>
     </div>

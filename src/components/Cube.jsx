@@ -8,11 +8,30 @@ Title: rubik's cube
 */
 
 import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { useRef } from 'react'
+import { useBox } from '@react-three/cannon'
+import * as THREE from 'three'
 
-export default function Model(props) {
+
+export default function Model({ position, ...props }) {
   const { nodes, materials } = useGLTF('/assets/3D-models/rubiks_cube/cube.gltf')
+  
+  const [ref] = useBox(() => ({
+    type: 'Dynamic',
+    mass: 5,
+    position: position || [0, 0, 0],
+    args: [1.9, 1.9, 1.9],
+    material: {
+      friction: 0.7,
+      restitution: 0.7,
+    },
+    linearDamping: 0.7,
+    angularDamping: 0.7,
+  }))
+
   return (
-    <group {...props} dispose={null}>
+    <group ref={ref} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={1.154}>
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <mesh geometry={nodes.RubixCube_RubixCube_0.geometry} material={materials.RubixCube} rotation={[-Math.PI / 2, 0, 0]} scale={1500} />
