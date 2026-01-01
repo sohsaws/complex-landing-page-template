@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import InteractiveScene from './components/InteractiveScene'
 import './App.css'
+import MiddleContentHeader from './components/MiddleContent'
 
 export default function App() {
   return (
@@ -19,6 +20,9 @@ export default function App() {
           <span className="plus">+</span>
           <span className="plus-edge">+</span>
         </div>
+        <div>
+          <MiddleContentHeader/>
+        </div> 
       </main>
     </div>
   )

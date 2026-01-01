@@ -1,0 +1,77 @@
+.middle-content {
+    display: flex;
+    min-height: 100vh;
+    padding: 150px 50px;
+    gap: 60px;
+    max-width: 1400px;
+    margin-left: 100px;
+}
+
+.left-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lottie-curve {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+.right-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    opacity: 0;
+}
+
+.right-content-title {
+    font-family: 'Comic Sans MS', 'Comic sans', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.right-content-caption {
+    font-family: 'Comic Sans MS', 'Comic sans', cursive;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 0;
+}
+
+
+.middle-content-center {
+  max-width: 500px;
+  height: 470px;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .middle-content {
+        flex-direction: column;
+        padding: 40px 40px;
+        gap: 40px;
+    }
+
+    .lottie-curve {
+        max-width: 400px;
+    }
+
+    .right-content-title {
+        font-size: 2rem;
+    }
+
+    .right-content-caption {
+        font-size: 1rem;
+    }
+}
+
