@@ -1,6 +1,5 @@
 .middle-content {
     display: flex;
-    min-height: 100vh;
     padding: 150px 50px;
     gap: 60px;
     max-width: 1400px;
@@ -12,12 +11,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.lottie-curve {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
 }
 
 .right-content {
@@ -45,16 +38,6 @@
 }
 
 
-.middle-content-center {
-  max-width: 500px;
-  height: 470px;
-  background: #1a1a1a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
 @media (max-width: 768px) {
     .middle-content {
         flex-direction: column;
@@ -74,4 +57,3 @@
         font-size: 1rem;
     }
 }
-
