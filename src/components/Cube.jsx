@@ -8,10 +8,7 @@ Title: rubik's cube
 */
 
 import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
-import { useRef } from 'react'
 import { useBox } from '@react-three/cannon'
-import * as THREE from 'three'
 
 
 export default function Model({ position, ...props }) {
