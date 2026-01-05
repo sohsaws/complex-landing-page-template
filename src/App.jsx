@@ -1,7 +1,8 @@
 import Header from './components/Header'
 import InteractiveScene from './components/InteractiveScene'
-import './App.css'
 import MiddleContentHeader from './components/MiddleContent'
+import Socials from './components/Socials'
+import './App.css'
 
 export default function App() {
   return (
@@ -22,8 +23,11 @@ export default function App() {
         </div>
         <div>
           <MiddleContentHeader/>
-        </div> 
+        </div>
       </main>
+      <footer>
+        <Socials />
+      </footer>
     </div>
   )
 }

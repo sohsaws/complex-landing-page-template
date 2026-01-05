@@ -2,35 +2,38 @@ import { useBox, usePlane } from '@react-three/cannon'
 import { useTexture } from '@react-three/drei'
 import * as THREE from 'three'
 
+
 function TechBox({ position, icon, color }) {
     const [ref] = useBox(() => ({
         mass: 1,
         position: position,
-        args: [1.5, 1.5, 0.2],
+        args: [1.5, 1.5, 1.5],
         material: {
             friction: 0.1,
             restitution: 0.5,
         }
     }))
 
-    const texture = useTexture(icon)
+    const texture = useTexture(icon, (texture) => {
+        texture.minFilter = THREE.LinearMipmapLinearFilter
+        texture.magFilter = THREE.LinearFilter
+        texture.anisotropy = 16
+        texture.generateMipmaps = true
+    })
+
+    const materials = [
+        <meshStandardMaterial key="right" color="#1a1a1a" emissive={color} emissiveIntensity={0.15} />,
+        <meshStandardMaterial key="left" color="#1a1a1a" emissive={color} emissiveIntensity={0.15} />,
+        <meshStandardMaterial key="top" color="#1a1a1a" emissive={color} emissiveIntensity={0.15} />,
+        <meshStandardMaterial key="bottom" color="#1a1a1a" emissive={color} emissiveIntensity={0.15} />,
+        <meshStandardMaterial key="front" map={texture} />,
+        <meshStandardMaterial key="back" map={texture} />,
+    ]
 
     return (
         <mesh ref={ref} castShadow>
-            <boxGeometry args={[1.5, 1.5, 0.2]} />
-            <meshStandardMaterial 
-                color="#1a1a1a" 
-                emissive={color}
-                emissiveIntensity={0.2}
-            />
-            <mesh position={[0, 0, 0.11]}>
-                <planeGeometry args={[1.2, 1.2]} />
-                <meshBasicMaterial 
-                    map={texture} 
-                    transparent 
-                    side={THREE.DoubleSide}
-                />
-            </mesh>
+            <boxGeometry args={[1.5, 1.5, 1.5]} />
+            {materials}
         </mesh>
     )
 }

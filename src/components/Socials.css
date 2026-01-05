@@ -1,0 +1,119 @@
+.socials-container {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 50px;
+    border-radius: 50px; 
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+.socials-title {
+    font-family: 'Comic Sans MS', 'Comic sans', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
+
+.socials-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.left-lottie-animation {
+    flex: 1;
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials-panel-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.social-panel {
+    background: #ffffff;
+    border: 1px solid #06acfe98;
+    border-radius: 20px;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.social-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--social-color);
+    opacity: 0;
+    z-index: 0;
+}
+
+.social-panel:hover::before {
+    opacity: 1;
+}
+
+.social-panel:hover {
+    border-color: var(--social-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon {
+    position: relative;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-panel:hover .social-icon {
+    transform: scale(1.1);
+}
+
+.social-name {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .socials-container {
+        flex-direction: column;
+        padding: 60px 30px;
+        gap: 40px;
+    }
+
+    .left-lottie-animation {
+        max-width: 300px;
+    }
+
+    .social-panel {
+        padding: 25px 30px;
+    }
+
+    .social-icon {
+        font-size: 2rem;
+    }
+
+    .social-name {
+        font-size: 1.2rem;
+    }
+}

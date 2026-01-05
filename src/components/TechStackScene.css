@@ -3,6 +3,7 @@
     background: #0a0a0a;
     padding: 80px 0;
     margin-left: calc(-50vw + 50%);
+    margin-top: 450px;
     position: relative;
 }
 
@@ -11,14 +12,27 @@
     font-size: 3rem;
     font-weight: 700;
     color: #ffffff;
+    text-transform: uppercase;
     text-align: center;
-    margin: 0 0 40px 0;
+    margin: 0 0 60px 0;
 }
 
 .tech-stack-canvas-wrapper {
     width: 100%;
+    max-width: 1200px;
     height: 400px;
+    margin: 0 auto;
     position: relative;
+    background: #0a0a0a;
+    border-radius: 24px;
+    box-shadow: 
+        inset 0 4px 8px rgba(0, 0, 0, 0.6),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.4),
+        inset 4px 0 8px rgba(0, 0, 0, 0.4),
+        inset -4px 0 8px rgba(0, 0, 0, 0.4),
+        0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
 }
 
 .tech-stack-canvas-wrapper canvas {
