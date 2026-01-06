@@ -3,6 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px 85px;
+  margin: 0 auto;
+  gap: 950px;
 }
 
 .header-left {

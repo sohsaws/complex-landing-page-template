@@ -7,8 +7,10 @@
 body {
   font-family: 'Comic Sans MS', 'Comic sans', -cursive;
   background-color: #fbfbfb;
+  overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
+  overflow-x: hidden;
 }

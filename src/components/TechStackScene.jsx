@@ -3,14 +3,13 @@ import { Physics } from '@react-three/cannon'
 import TechBoxes from './TechBoxes'
 import CursorInteraction from './CursorInteraction'
 import './TechStackScene.css'
-import Walls from './InteractiveWindow'
 
 
 
 export default function TechStackScene() {
     return (
         <div className="tech-stack-scene-container">
-            <h2 className="tech-stack-title">Мой стэк</h2>
+            <text className="tech-stack-title">Мой стэк</text>
             <div className="tech-stack-canvas-wrapper">
                 <Canvas
                     orthographic
@@ -19,13 +18,12 @@ export default function TechStackScene() {
                         position: [0, 0, 10],
                     }}
                 >
-                    <color attach="background" args={['#0a0a0a']} />
+                    <color attach="background" args={['#0b0b0b']} />
                     <ambientLight intensity={1} />
                     <pointLight position={[10, 10, 10]} intensity={0.5} />
 
 
                     <Physics gravity={[0, 0, 0]}>
-                        <Walls />
 
                         <TechBoxes />
                         <CursorInteraction />

@@ -9,7 +9,7 @@ function TechBox({ position, icon, color }) {
         position: position,
         args: [1.5, 1.5, 1.5],
         material: {
-            friction: 0.1,
+            friction: 0.5,
             restitution: 0.5,
         }
     }))
@@ -17,7 +17,7 @@ function TechBox({ position, icon, color }) {
     const texture = useTexture(icon, (texture) => {
         texture.minFilter = THREE.LinearMipmapLinearFilter
         texture.magFilter = THREE.LinearFilter
-        texture.anisotropy = 16
+        texture.anisotropy = 30
         texture.generateMipmaps = true
     })
 
@@ -31,7 +31,7 @@ function TechBox({ position, icon, color }) {
     ]
 
     return (
-        <mesh ref={ref} castShadow>
+        <mesh ref={ref}>
             <boxGeometry args={[1.5, 1.5, 1.5]} />
             {materials}
         </mesh>
@@ -40,13 +40,13 @@ function TechBox({ position, icon, color }) {
 
 function Boundaries() {
     const [floor] = usePlane(() => ({
-        position: [0, -4, 0],
+        position: [0, -3.4, 0],
         rotation: [-Math.PI / 2, 0, 0],
         type: 'Static'
     }))
 
     const [ceiling] = usePlane(() => ({
-        position: [0, 4, 0],
+        position: [0, 3.4, 0],
         rotation: [Math.PI / 2, 0, 0],
         type: 'Static'
     }))
@@ -63,12 +63,26 @@ function Boundaries() {
         type: 'Static'
     }))
 
+    const [backWall] = usePlane(() => ({
+        position: [0, 0, -10],
+        rotation: [0, 0, 0],
+        type: 'Static'
+    }))
+
+    const [frontWall] = usePlane(() => ({
+        position: [0, 0, 9],
+        rotation: [0, Math.PI, 0],
+        type: 'Static'
+    }))
+
     return (
         <>
             <mesh ref={floor} />
             <mesh ref={ceiling} />
             <mesh ref={leftWall} />
             <mesh ref={rightWall} />
+            <mesh ref={backWall} />
+            <mesh ref={frontWall} />
         </>
     )
 }

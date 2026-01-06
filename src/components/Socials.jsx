@@ -1,10 +1,23 @@
 import './Socials.css';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useState } from 'react';
 import instagramIcon from '/assets/Images/instagram.png';
 import vkIcon from '/assets/Images/vk.png';
 import telegramIcon from '/assets/Images/telegram.png';
 
 export default function Socials() {
+    const [showCopied, setShowCopied] = useState(false);
+    const email = "borderland@gmail.com";
+    const handleCopyEmail = async () => {
+        try {
+            await navigator.clipboard.writeText(email);
+            setShowCopied(true);
+            setTimeout(() => setShowCopied(false), 2000);
+        } catch (err) {
+            console.error('Failed to copy email:', err);
+        }
+    };
+
     const socials = [
         { 
             name: 'Telegram', 
@@ -38,19 +51,29 @@ export default function Socials() {
                     />
                 </div>
 
-                <div className="socials-panel-container">
-                    {socials.map((social, index) => (
-                        <a 
-                            key={index}
-                            href={social.link}
-                            className="social-panel"
-                            style={{'--social-color': social.color}}
-                        >
-                            {social.icon}
-                        </a>
-                    ))}
+                <div className="socials-right-section">
+                    <div className="socials-panel-container">
+                        {socials.map((social, index) => (
+                            <a 
+                                key={index}
+                                href={social.link}
+                                className="social-panel"
+                                style={{'--social-color': social.color}}
+                            >
+                                {social.icon}
+                            </a>
+                        ))}
+                    </div>
+                    <button className="email-button" onClick={handleCopyEmail}>
+                        {email}
+                    </button>
                 </div>
             </div>
+            {showCopied && (
+                <div className="toast-notification">
+                    Скопировано
+                </div>
+            )}
         </div>
     )
 }

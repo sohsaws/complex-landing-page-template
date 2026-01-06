@@ -11,7 +11,7 @@
 
 .socials-title {
     font-family: 'Comic Sans MS', 'Comic sans', cursive;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #333;
     text-transform: uppercase;
@@ -35,8 +35,16 @@
     align-items: center;
 }
 
-.socials-panel-container {
+.socials-right-section {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 150px;
+}
+
+.socials-panel-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,13 +55,11 @@
     background: #ffffff;
     border: 1px solid #06acfe98;
     border-radius: 20px;
-    padding: 0;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -80,8 +86,8 @@
 .social-icon {
     position: relative;
     z-index: 1;
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -92,6 +98,68 @@
 
 .social-name {
     display: none;
+}
+
+.email-button {
+    font-family: 'Comic Sans MS', 'Comic sans', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    background: #ffffff;
+    border: 1px solid #06acfe98;
+    border-radius: 20px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.email-button:hover {
+    background: #f0f9ff;
+    border-color: #2596be;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(62, 195, 243, 0.3);
+}
+
+.email-button:active {
+    transform: scale(0.98);
+}
+
+.toast-notification {
+    position: fixed;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    color: #0b0a0a;
+    font-family: 'Comic Sans MS', 'Comic sans', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 1px solid #06acfe98;
+    padding: 10px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
 }
 
 @media (max-width: 768px) {
