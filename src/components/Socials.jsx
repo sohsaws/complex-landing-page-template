@@ -40,7 +40,7 @@ export default function Socials() {
     ]
 
     return (
-        <div className="socials-container">
+        <div id="socials-section" className="socials-container">
             <h2 className="socials-title">Связаться со мной</h2>
             <div className="socials-content">
                 <div className="left-lottie-animation">

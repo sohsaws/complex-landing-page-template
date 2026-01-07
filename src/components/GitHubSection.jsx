@@ -31,7 +31,7 @@ export default function GitHubSection() {
     }, []);
 
     return (
-        <div ref={sectionRef} className="github-section">
+        <div id="portfolio-section" ref={sectionRef} className="github-section">
             <div className="github-content">
                 <div className="github-left">
                     <a 

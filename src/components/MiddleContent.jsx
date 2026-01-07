@@ -96,7 +96,7 @@ export default function MiddleContentHeader() {
 
     return (
         <>
-        <div ref={containerRef} className="middle-content">
+        <div id="about-section" ref={containerRef} className="middle-content">
             <div className="left-content-svg1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1277" height="623" viewBox="0 0 1277 623" version="1.1" fill="none">
 	                <path 
