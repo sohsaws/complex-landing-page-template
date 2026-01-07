@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import InteractiveScene from './components/InteractiveScene'
 import MiddleContentHeader from './components/MiddleContent'
+import GitHubSection from './components/GitHubSection'
 import Socials from './components/Socials'
 import './App.css'
 
@@ -24,6 +25,7 @@ export default function App() {
         <div>
           <MiddleContentHeader/>
         </div>
+        <GitHubSection />
       </main>
       <footer>
         <Socials />

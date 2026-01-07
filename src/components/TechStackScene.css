@@ -1,26 +1,25 @@
 .tech-stack-scene-container {
-    width: 100vw;
-    margin-left: 0px;
-    background: #0a0a0a;
-    padding: 80px 0px;
-    margin-top: 450px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 450px auto 0;
+    padding: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
-    border-radius: 24px;
 }
 
 .tech-stack-title {
     font-family: 'Comic Sans MS', 'Comic sans', cursive;
-    font-size: 1.5rem;
-    font-weight: 700;
-    align-items: center;
-    color: #ffffff;
-    text-transform: uppercase;
     text-align: center;
-    position: relative; 
-    margin: 0 0 60px 0;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.tech-stack-title img {
+    max-width: 100%;
+    height: auto;
 }
 
 .tech-stack-canvas-wrapper {
