@@ -7,8 +7,7 @@ import telegramIcon from '/assets/Images/telegram.png';
 
 export default function Socials() {
     const [showCopied, setShowCopied] = useState(false);
-    const email = import.meta.env.VITE_EMAIL || "urmail@gmail.com";
-    
+    const email = import.meta.env.VITE_EMAIL;
     const handleCopyEmail = async () => {
         try {
             await navigator.clipboard.writeText(email);
@@ -24,19 +23,19 @@ export default function Socials() {
             name: 'Telegram', 
             color: '#2596be',
             icon: <img src={telegramIcon} alt="Telegram" className="social-icon" />,
-            link: import.meta.env.VITE_TELEGRAM_URL || '#'
+            link: import.meta.env.VITE_URL_TELEGRAM
         },
         { 
             name: 'VK', 
             color: '#004c9c',
             icon: <img src={vkIcon} alt="VK" className="social-icon" />,
-            link: import.meta.env.VITE_VK_URL || '#'
+            link: import.meta.env.VITE_URL_VK
         },
         { 
             name: 'Instagram', 
             color: '#F77737',
             icon: <img src={instagramIcon} alt="Instagram" className="social-icon" />,
-            link: import.meta.env.VITE_INSTAGRAM_URL || '#'
+            link: import.meta.env.VITE_URL_INSTAGRAM
         }
     ]
 

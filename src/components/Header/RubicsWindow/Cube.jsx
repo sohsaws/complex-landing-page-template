@@ -20,7 +20,7 @@ export default function Model({ position, ...props }) {
     position: position || [0, 0, 0],
     args: [1.9, 1.9, 1.9],
     material: {
-      friction: 5,
+      friction: 0.5,
       restitution: 1,
     },
     linearDamping: 0.1,

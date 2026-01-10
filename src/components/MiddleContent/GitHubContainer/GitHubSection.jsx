@@ -75,7 +75,7 @@ export default function GitHubSection() {
             <div className="github-content">
                 <div className="github-left">
                     <a 
-                        href="https://github.com" 
+                        href={import.meta.env.VITE_GITHUB_URL} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="github-button"

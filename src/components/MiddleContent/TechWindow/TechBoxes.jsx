@@ -102,7 +102,8 @@ export default function TechBoxes() {
         { icon: 'assets/Images/React.png', color: '#2596be', position: [3, 2, 0] },
         { icon: 'assets/Images/CSS3.png', color: '#215dff', position: [-3, -1, 0] },
         { icon: 'assets/Images/HTML5.png', color: '#ff8000', position: [0, -1, 0] },
-        { icon: 'assets/Images/Next.js.png', color: '#ffffff', position: [3, -1, 0] }
+        { icon: 'assets/Images/Next.js.png', color: '#ffffff', position: [3, -1, 0] },
+        { icon: 'assets/Images/Python.png', color: '#5b88acff', position: [6, 2, 0] }
     ]
 
     return (
