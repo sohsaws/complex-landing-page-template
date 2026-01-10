@@ -7,7 +7,8 @@ import telegramIcon from '/assets/Images/telegram.png';
 
 export default function Socials() {
     const [showCopied, setShowCopied] = useState(false);
-    const email = "borderland@gmail.com";
+    const email = import.meta.env.VITE_EMAIL || "urmail@gmail.com";
+    
     const handleCopyEmail = async () => {
         try {
             await navigator.clipboard.writeText(email);
@@ -23,19 +24,19 @@ export default function Socials() {
             name: 'Telegram', 
             color: '#2596be',
             icon: <img src={telegramIcon} alt="Telegram" className="social-icon" />,
-            link: '#'
+            link: import.meta.env.VITE_TELEGRAM_URL || '#'
         },
         { 
             name: 'VK', 
             color: '#004c9c',
             icon: <img src={vkIcon} alt="VK" className="social-icon" />,
-            link: '#'
+            link: import.meta.env.VITE_VK_URL || '#'
         },
         { 
             name: 'Instagram', 
             color: '#F77737',
             icon: <img src={instagramIcon} alt="Instagram" className="social-icon" />,
-            link: '#'
+            link: import.meta.env.VITE_INSTAGRAM_URL || '#'
         }
     ]
 
@@ -44,7 +45,7 @@ export default function Socials() {
             <h2 className="socials-title">Связаться со мной</h2>
             <div className="socials-content">
                 <div className="left-lottie-animation">
-                    <DotLottieReact 
+                    <DotLottieReact
                         src="assets/SVG/work-from-home.lottie"
                         loop={true}
                         autoplay={true}

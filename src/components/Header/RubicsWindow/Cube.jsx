@@ -16,15 +16,15 @@ export default function Model({ position, ...props }) {
   
   const [ref] = useBox(() => ({
     type: 'Dynamic',
-    mass: 5,
+    mass: 1,
     position: position || [0, 0, 0],
     args: [1.9, 1.9, 1.9],
     material: {
-      friction: 0.7,
-      restitution: 0.7,
+      friction: 5,
+      restitution: 1,
     },
-    linearDamping: 0.7,
-    angularDamping: 0.7,
+    linearDamping: 0.1,
+    angularDamping: 0.1,
   }))
 
   return (

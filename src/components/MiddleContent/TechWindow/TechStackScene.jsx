@@ -10,9 +10,10 @@ export default function TechStackScene() {
     return (
         <div id="stack-section" className="tech-stack-scene-container">
             <div className="tech-stack-title">
-                <img
-                    src="https://readme-typing-svg.demolab.com/?font=Comic+Sans+MS&weight=700&size=30&duration=4500&pause=1200&color=ffffff&center=true&vCenter=true&width=900&lines=МОЙ+СТЭК;МОЙ+АРСЕНАЛ;МОИ+МОЛИТВЫ;МОЙ+НАБОР+КОСТЫЛЕЙ" 
-                    alt="Typing SVG"/>
+                <a href="https://git.io/typing-svg">
+                    <img src="https://readme-typing-svg.demolab.com?font=Comic+Sans+MS&pause=950&color=000000&width=500&lines=МОЙ+СТЭК;МОЙ+АРСЕНАЛ;МОЙ+НАБОР+КОСТЫЛЕЙ;" 
+                        alt="Typing SVG" />
+                </a>
             </div>
             <div className="tech-stack-canvas-wrapper">
                 <Canvas

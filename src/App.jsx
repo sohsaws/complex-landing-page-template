@@ -1,8 +1,8 @@
-import Header from './components/Header'
-import InteractiveScene from './components/InteractiveScene'
-import MiddleContentHeader from './components/MiddleContent'
-import GitHubSection from './components/GitHubSection'
-import Socials from './components/Socials'
+import Header from './components/Header/Navigation/Header'
+import InteractiveScene from './components/Header/RubicsWindow/InteractiveScene'
+import MiddleContentHeader from './components/MiddleContent/TechWindow/MiddleContent'
+import GitHubSection from './components/MiddleContent/GitHubContainer/GitHubSection'
+import Socials from './components/Footer/Socials/Socials'
 import './App.css'
 
 export default function App() {

@@ -8,7 +8,7 @@ import CursorSphere from './CursorShere'
 export default function InteractiveScene() {
 
     const cubes = useMemo (() => {
-        const count = 26
+        const count = 22
 
         return Array.from({ length: count }, (_, i) => ({
             id: i,

@@ -1,7 +1,7 @@
 .tech-stack-scene-container {
     width: 100%;
     max-width: 1400px;
-    margin: 450px auto 0;
+    margin: 530px auto 0;
     padding: 0;
     display: flex;
     align-items: center;
@@ -13,14 +13,11 @@
 .tech-stack-title {
     font-family: 'Comic Sans MS', 'Comic sans', cursive;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
+    margin-left: 330px;
     width: 100%;
 }
 
-.tech-stack-title img {
-    max-width: 100%;
-    height: auto;
-}
 
 .tech-stack-canvas-wrapper {
     width: 100%;
