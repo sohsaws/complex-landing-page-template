@@ -1,9 +1,11 @@
+// Tech stack showcase with physics-enabled 3D cubes
 import { useBox, usePlane } from '@react-three/cannon'
 import { useTexture } from '@react-three/drei'
 import * as THREE from 'three'
 
-
+// Individual tech icon cube with physics
 function TechBox({ position, icon, color }) {
+    // Physics body - dynamic box that responds to forces
     const [ref] = useBox(() => ({
         mass: 1,
         position: position,
@@ -14,20 +16,22 @@ function TechBox({ position, icon, color }) {
         }
     }))
 
+    // Load and configure texture with high-quality filtering
     const texture = useTexture(icon, (texture) => {
-        texture.minFilter = THREE.LinearMipmapLinearFilter
-        texture.magFilter = THREE.LinearFilter
-        texture.anisotropy = 30
+        texture.minFilter = THREE.LinearMipmapLinearFilter // Smooth when zoomed out
+        texture.magFilter = THREE.LinearFilter // Smooth when zoomed in
+        texture.anisotropy = 30 // Reduces blur at angles
         texture.generateMipmaps = true
     })
 
+    // 6 materials for cube faces: sides have colored glow, front/back show icon
     const materials = [
         <meshStandardMaterial key="right" color="#1a1a1a" emissive={color} emissiveIntensity={0.15} />,
         <meshStandardMaterial key="left" color="#1a1a1a" emissive={color} emissiveIntensity={0.15} />,
         <meshStandardMaterial key="top" color="#1a1a1a" emissive={color} emissiveIntensity={0.15} />,
         <meshStandardMaterial key="bottom" color="#1a1a1a" emissive={color} emissiveIntensity={0.15} />,
-        <meshStandardMaterial key="front" map={texture} />,
-        <meshStandardMaterial key="back" map={texture} />,
+        <meshStandardMaterial key="front" map={texture} />, // Icon texture
+        <meshStandardMaterial key="back" map={texture} />,  // Icon texture
     ]
 
     return (
@@ -38,7 +42,9 @@ function TechBox({ position, icon, color }) {
     )
 }
 
+// Invisible physics boundaries to contain cubes within visible area
 function Boundaries() {
+    // Floor plane - cubes rest on this
     const [floor] = usePlane(() => ({
         position: [0, -3.4, 0],
         rotation: [-Math.PI / 2, 0, 0],
@@ -87,7 +93,9 @@ function Boundaries() {
     )
 }
 
+// Main component - renders all tech cubes with their icons and colors
 export default function TechBoxes() {
+    // Tech stack data: icon path, glow color, initial position
     const technologies = [
         { icon: 'assets/Images/JavaScript.png', color: '#ffe100', position: [-3, 2, 0] },
         { icon: 'assets/Images/TypeScript.png', color: '#003ad8', position: [0, 2, 0] },

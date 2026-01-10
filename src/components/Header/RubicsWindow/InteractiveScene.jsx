@@ -1,3 +1,4 @@
+// Interactive 3D scene with physics-enabled Rubik's cubes
 import { useRef, useMemo, useEffect, useState, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Physics } from '@react-three/cannon'
@@ -6,10 +7,11 @@ import Walls from './InteractiveWindow'
 import CursorSphere from './CursorShere'
 
 export default function InteractiveScene() {
-
+    // Generate cube positions once using useMemo to prevent re-renders
     const cubes = useMemo (() => {
-        const count = 22
+        const count = 22 // Number of cubes in the scene
 
+        // Create array of cubes with random positions
         return Array.from({ length: count }, (_, i) => ({
             id: i,
             position: [
@@ -21,9 +23,13 @@ export default function InteractiveScene() {
     }, [])
 
     return (
+        // Three.js Canvas with custom camera position and narrow FOV for isometric look
         <Canvas camera={{ position: [0, 20, -10], fov: 17 }}>
+            {/* Physics world with downward gravity */}
             <Physics gravity={[0, -10, 0]}>
+                {/* Invisible boundary walls to contain cubes */}
                 <Walls />
+                {/* Invisible sphere that follows cursor and pushes cubes */}
                 <CursorSphere />
                 <Suspense fallback={null}>
                     {cubes.map((cube) => (
@@ -34,6 +40,7 @@ export default function InteractiveScene() {
                     ))}
                 </Suspense>
             </Physics>
+            {/* Scene lighting - ambient for base, directional for shadows */}
             <ambientLight intensity={1} />
             <directionalLight position={[0, 20, -10]} intensity={1} />
             <directionalLight position={[20, 10, -20]} intensity={1} />

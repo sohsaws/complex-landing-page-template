@@ -1,23 +1,26 @@
+// Navigation header with dropdown menu and smooth scroll navigation
 import { useState } from 'react'
 import AnimatedLogo from '../Logo/AnimatedLogo'
 import './Header.css'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
+  const [isClosing, setIsClosing] = useState(false); // Controls fadeOut animation
 
+  // Toggle menu with fadeOut animation before closing
   const handleMenuToggle = () => {
     if (isMenuOpen) {
-      setIsClosing(true);
+      setIsClosing(true); // Trigger fadeOut animation
       setTimeout(() => {
         setIsMenuOpen(false);
         setIsClosing(false);
-      }, 200); // Match animation duration
+      }, 200); // Wait for animation to complete (200ms)
     } else {
       setIsMenuOpen(true);
     }
   };
 
+  // Smooth scroll to section by ID and close menu with animation
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {

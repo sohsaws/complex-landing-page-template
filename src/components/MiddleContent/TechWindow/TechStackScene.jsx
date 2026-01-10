@@ -1,10 +1,9 @@
+// Tech stack section with interactive 3D physics cubes
 import { Canvas } from '@react-three/fiber'
 import { Physics } from '@react-three/cannon'
 import TechBoxes from './TechBoxes'
 import CursorInteraction from './CursorInteraction'
 import './TechStackScene.css'
-
-
 
 export default function TechStackScene() {
     return (
@@ -16,6 +15,7 @@ export default function TechStackScene() {
                 </a>
             </div>
             <div className="tech-stack-canvas-wrapper">
+                {/* Orthographic camera for flat 2D-like appearance */}
                 <Canvas
                     orthographic
                     camera={{ 
@@ -23,7 +23,10 @@ export default function TechStackScene() {
                         position: [0, 0, 10],
                     }}
                 >
+                    {/* Dark background color */}
                     <color attach="background" args={['#0b0b0b']} />
+                    
+                    {/* Multiple lights from different angles for bright, even illumination */}
                     <ambientLight intensity={1.5} />
                     <pointLight position={[10, 10, 10]} intensity={1.2} />
                     <pointLight position={[-10, 10, 5]} intensity={1} />
@@ -32,10 +35,10 @@ export default function TechStackScene() {
                     <directionalLight position={[0, 5, 10]} intensity={0.6} />
 
 
+                    {/* Zero gravity physics - cubes float and respond to cursor */}
                     <Physics gravity={[0, 0, 0]}>
-
                         <TechBoxes />
-                        <CursorInteraction />
+                        <CursorInteraction /> {/* Invisible sphere that pushes cubes */}
                     </Physics>
                 </Canvas>
             </div>
