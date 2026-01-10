@@ -36,7 +36,7 @@ A modern, interactive portfolio website built with React and Three.js featuring 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/profile-landing.git
+git clone https://github.com/sohsaws/complex-landing-page-template.git
 
 # Navigate to project directory
 cd profile-landing
@@ -103,4 +103,4 @@ MIT License
 
 ## Author
 
-V.ktr - [GitHub](https://github.com/yourusername)
+V.ktr - [GitHub](https://github.com/sohsaws)
