@@ -21,10 +21,10 @@ export default function Model({ position, ...props }) {
     args: [1.9, 1.9, 1.9],
     material: {
       friction: 0.5,
-      restitution: 1,
+      restitution: 0.1,
     },
-    linearDamping: 0.1,
-    angularDamping: 0.1,
+    linearDamping: 0.5,
+    angularDamping: 0.5,
   }))
 
   return (

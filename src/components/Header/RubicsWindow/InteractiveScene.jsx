@@ -9,7 +9,7 @@ import CursorSphere from './CursorShere'
 export default function InteractiveScene() {
     // Generate cube positions once using useMemo to prevent re-renders
     const cubes = useMemo (() => {
-        const count = 22 // Number of cubes in the scene
+        const count = 25 // Number of cubes in the scene
 
         // Create array of cubes with random positions
         return Array.from({ length: count }, (_, i) => ({
