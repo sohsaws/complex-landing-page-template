@@ -124,7 +124,7 @@ export default function MiddleContentHeader() {
 
             <div ref={textRef} className="right-content">
                 <h1 className="right-content-title">V.ktr</h1>
-                <p className="right-content-caption">Я — начинающий разработчик. Изучаю и применяю современные технологии для создания веб-сайтов, мобильных приложений и автоматизации задач.
+                <p className="right-content-caption">Я - являеюсь full-stack web-разработчиком с опытом около 1 года. Изучаю и применяю современные технологии для создания web-приложений, лэндингов, мобильных приложений и автоматизации задач.
                     <p>Работаю с React Native, Next.js, TypeScript, JavaScript, Python, HTML/CSS</p>
                     <p>Интересны реальные проекты, где можно получить опыт и расти как разработчик. Спасибо за внимание! Надеюсь, вам нравится мой сайт!</p>
                 </p>
